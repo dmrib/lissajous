@@ -30,7 +30,7 @@ class Generator
      */
     update()
     {
-        this.angle += this.speed;
+        this.angle -= this.speed;
     }
 
     /**
@@ -63,11 +63,11 @@ class HGenerator extends Generator
         noFill();
         strokeWeight(3);
         stroke(...H_GENERATOR_COLOR);
-        ellipse(this.center.x, this.center.y, ENTRY_SIZE - 10, ENTRY_SIZE - 10);
+        ellipse(this.center.x, this.center.y, this.radius * 2, this.radius * 2);
 
         // render generator point
         fill(...H_POINT_COLOR);
-        strokeWeight(1);
+        strokeWeight(2);
         stroke(...H_POINT_COLOR);
         const polar = this.toPolar();
         ellipse(polar.x, polar.y, 10, 10);
@@ -97,11 +97,11 @@ class VGenerator extends Generator
         noFill();
         strokeWeight(3);
         stroke(...V_GENERATOR_COLOR);
-        ellipse(this.center.x, this.center.y, ENTRY_SIZE - 10, ENTRY_SIZE - 10);
+        ellipse(this.center.x, this.center.y, this.radius * 2, this.radius * 2);
 
         // render generator point
         fill(...V_POINT_COLOR);
-        strokeWeight(1);
+        strokeWeight(2);
         stroke(...V_POINT_COLOR);
         const polar = this.toPolar();
         ellipse(polar.x, polar.y, 10, 10);
